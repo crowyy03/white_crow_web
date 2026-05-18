@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<script>
+  var l = window.location;
+  l.replace(l.protocol+'//'+l.hostname+(l.port?':'+l.port:'')+l.pathname.split('/').slice(0,1).join('/')+'/?p='+encodeURIComponent(l.pathname+l.search)+'&q='+l.hash.slice(2));
+</script>
+</html>

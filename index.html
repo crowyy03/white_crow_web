@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>White Crow VPN — плати по дням, не на годы вперёд</title>
+<meta name="description" content="VPN без подписок и автосписаний. Пополняешь баланс — каждый день уходит 7 ₽. Деньги кончились — VPN ждёт.">
+<link rel="icon" href="/assets/crow.png">
+<script>
+  // SPA redirect reader — paired with public/404.html.
+  // Decodes ?p=ENCODED_PATH&q=HASH back to a real URL before React mounts,
+  // so a direct hit to /connect on GitHub Pages routes correctly.
+  (function (l) {
+    if (l.search.indexOf('?p=') === 0) {
+      var parts = l.search.slice(3).split('&q=');
+      var p = decodeURIComponent(parts[0] || '/');
+      var q = parts[1] || '';
+      history.replaceState(null, '', p + (q ? '#' + q : ''));
+    }
+  })(window.location);
+</script>
+  <script type="module" crossorigin src="/assets/index-BS5XIE6s.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DcRYEQd-.css">
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
