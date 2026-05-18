@@ -1,0 +1,180 @@
+/* ─────────────────────────────────────────────────────────────
+   White Crow VPN — design tokens
+   Derived from Designer Skills (paper/ink restraint, Bricolage display,
+   editorial italic accent) but retuned for an indie VPN brand:
+   dark canvas → white crow, single bold accent (tweakable).
+   ───────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  /* Type families */
+  --font-display: "Bricolage Grotesque", "Geist", system-ui, sans-serif;
+  --font-sans: "Bricolage Grotesque", "Geist", system-ui, sans-serif;
+  --font-ui: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-ios: -apple-system, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+
+  /* Type scale */
+  --t-10: 10px; --t-11: 11px; --t-12: 12px; --t-13: 13px; --t-14: 14px;
+  --t-15: 15px; --t-16: 16px; --t-18: 18px; --t-20: 20px; --t-22: 22px;
+  --t-24: 24px; --t-28: 28px; --t-32: 32px; --t-40: 40px; --t-48: 48px;
+  --t-56: 56px; --t-72: 72px; --t-96: 96px; --t-120: 120px; --t-160: 160px;
+
+  /* Spacing — 4px base */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+  --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px; --sp-16: 64px;
+  --sp-20: 80px; --sp-24: 96px; --sp-32: 128px; --sp-40: 160px;
+
+  /* Radii */
+  --r-2: 2px; --r-4: 4px; --r-6: 6px; --r-8: 8px; --r-12: 12px;
+  --r-16: 16px; --r-20: 20px; --r-pill: 999px;
+
+  /* Default accent — Petrol (deep teal, from brand reference).
+     Tweaked at runtime via --accent override. */
+  --accent: #2A7F87;
+  --accent-soft: rgba(42, 127, 135, .14);
+  --accent-fg: #FFFFFF;
+
+  /* Motion */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 280ms;
+
+  /* Status colors (do not retune per theme — they read fine on both) */
+  --positive: #69D49A;
+  --positive-soft: rgba(105, 212, 154, .14);
+  --negative: #E5604D;
+  --negative-soft: rgba(229, 96, 77, .14);
+  --warning: #F1B547;
+  --warning-soft: rgba(241, 181, 71, .14);
+}
+
+[data-theme="dark"] {
+  --bg-page: #0E0D0B;
+  --bg-surface: #16140F;
+  --bg-raised: #1D1A14;
+  --bg-sunken: #08070A;
+  --bg-inverse: #F4EFE2;
+  --fg-1: #F4EFE2;
+  --fg-2: rgba(244, 239, 226, .74);
+  --fg-3: rgba(244, 239, 226, .50);
+  --fg-4: rgba(244, 239, 226, .30);
+  --fg-on-accent: #FFFFFF;
+  --line-hairline: rgba(244, 239, 226, .10);
+  --line-default: rgba(244, 239, 226, .18);
+  --line-strong: rgba(244, 239, 226, .28);
+  --shadow-1: 0 1px 0 rgba(0, 0, 0, .35), 0 2px 4px rgba(0, 0, 0, .35);
+  --shadow-2: 0 1px 0 rgba(0, 0, 0, .35), 0 10px 24px rgba(0, 0, 0, .45);
+  --shadow-focus: 0 0 0 3px rgba(42, 127, 135, .35);
+  --tg-bg: #0F1A24;
+  --tg-pattern: radial-gradient(circle at 30% 20%, rgba(91, 191, 236, .04), transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(91, 191, 236, .04), transparent 50%);
+  --tg-in-bubble: #1F2C39;
+  --tg-out-bubble: #2B5278;
+  --tg-text: #FFFFFF;
+  --tg-text-muted: #7F92A7;
+  --tg-link: #5EABE2;
+  --tg-keyboard-bg: #1A2632;
+  --tg-keyboard-btn: #2F3E4F;
+  --tg-keyboard-btn-text: #FFFFFF;
+  --tg-input-bg: #182533;
+  --tg-nav-bg: rgba(24, 37, 51, .92);
+}
+
+[data-theme="light"] {
+  --bg-page: #F2EEE2;
+  --bg-surface: #E8E2D0;
+  --bg-raised: #FBF8EF;
+  --bg-sunken: #DDD6C0;
+  --bg-inverse: #14110B;
+  --fg-1: #14110B;
+  --fg-2: rgba(20, 17, 11, .72);
+  --fg-3: rgba(20, 17, 11, .50);
+  --fg-4: rgba(20, 17, 11, .30);
+  --fg-on-accent: #FFFFFF;
+  --line-hairline: rgba(20, 17, 11, .12);
+  --line-default: rgba(20, 17, 11, .22);
+  --line-strong: rgba(20, 17, 11, .35);
+  --shadow-1: 0 1px 0 rgba(20, 18, 12, .04), 0 1px 3px rgba(20, 18, 12, .08);
+  --shadow-2: 0 2px 4px rgba(20, 18, 12, .06), 0 10px 24px rgba(20, 18, 12, .10);
+  --shadow-focus: 0 0 0 3px rgba(42, 127, 135, .28);
+  --tg-bg: #DEE2E6;
+  --tg-pattern: radial-gradient(circle at 30% 20%, rgba(70, 100, 130, .05), transparent 40%),
+                radial-gradient(circle at 70% 80%, rgba(70, 100, 130, .05), transparent 50%);
+  --tg-in-bubble: #FFFFFF;
+  --tg-out-bubble: #E1FFC7;
+  --tg-text: #14110B;
+  --tg-text-muted: #707579;
+  --tg-link: #168ACD;
+  --tg-keyboard-bg: #CDD2D8;
+  --tg-keyboard-btn: #FFFFFF;
+  --tg-keyboard-btn-text: #14110B;
+  --tg-input-bg: #FFFFFF;
+  --tg-nav-bg: rgba(247, 247, 247, .92);
+}
+
+/* ─── Reset / base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  background: var(--bg-page);
+  color: var(--fg-1);
+  font-feature-settings: "ss01", "cv11";
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+/* Utility */
+.mono { font-family: var(--font-mono); font-feature-settings: "ss02"; }
+.serif-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-11);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--fg-3);
+  font-weight: 500;
+}
+.hairline { background: var(--line-hairline); }
+.hr {
+  height: 1px;
+  background: var(--line-hairline);
+  border: 0;
+  margin: 0;
+}
+
+/* Hero headline (Bricolage with wdth flex) */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  font-variation-settings: "wdth" 95;
+}
+.display-wide {
+  font-variation-settings: "wdth" 110;
+}
+
+/* Editorial italic accent */
+.em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+/* Subtle dotted hairline used in spec sheets */
+.dot-line {
+  flex: 1;
+  border-bottom: 1px dotted var(--line-default);
+  margin: 0 8px;
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
