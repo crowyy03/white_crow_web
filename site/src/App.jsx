@@ -27,8 +27,22 @@ function ScrollToTop() {
 }
 
 function CrowDropoutFilter() {
+  // Mobile Safari may paint a stray black box if the defs-only SVG isn't
+  // explicitly zero-sized and clipped — pin it to 0/0 and hide overflow.
   return (
-    <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: 0,
+        height: 0,
+        overflow: 'hidden',
+        pointerEvents: 'none',
+      }}
+    >
       <defs>
         <filter id="crow-dropout" x="-2%" y="-2%" width="104%" height="104%">
           <feTurbulence

@@ -16,16 +16,16 @@ button { cursor: pointer; }
 }
 
 /* ──── Responsive typography (fluid) ──── */
-.h-display     { font-size: clamp(56px, 9vw, 120px); }
-.h-section     { font-size: clamp(36px, 5vw, 64px); }
-.h-section-sm  { font-size: clamp(32px, 4.5vw, 56px); }
-.h-price       { font-size: clamp(64px, 8vw, 96px); }
-.h-cta         { font-size: clamp(48px, 8.5vw, 120px); }
+.h-display     { font-size: clamp(44px, 6.2vw, 88px); line-height: 1.0; }
+.h-section     { font-size: clamp(32px, 4.4vw, 56px); }
+.h-section-sm  { font-size: clamp(28px, 3.8vw, 48px); }
+.h-price       { font-size: clamp(56px, 6.8vw, 84px); }
+.h-cta         { font-size: clamp(40px, 6vw, 88px); line-height: 1.0; }
 .h-step        { font-size: clamp(22px, 2.2vw, 28px); }
 .h-card        { font-size: clamp(18px, 1.9vw, 22px); }
 
-.lead          { font-size: clamp(17px, 1.55vw, 22px); }
-.lead-large    { font-size: clamp(16px, 1.4vw, 20px); }
+.lead          { font-size: clamp(16px, 1.4vw, 20px); }
+.lead-large    { font-size: clamp(15px, 1.25vw, 18px); }
 
 /* ──── Section container — caps width and scales padding ──── */
 .container { max-width: 1200px; margin: 0 auto; padding: 96px 40px; }
